@@ -1,1 +1,1 @@
-print("Initial Type")
+print("This is Mywork")
