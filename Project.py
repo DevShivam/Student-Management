@@ -58,6 +58,27 @@ class Student:
 
         txt_Address=Text(Manage_Frame,width=25,height=4)
         txt_Address.grid(row=7,column=1,pady=10,padx=20,sticky="w")
+        
+        
+        #Button_Frame
+        btn_Frame=Frame(Manage_Frame,bd=4,relief=RIDGE,bg="crimson")
+        btn_Frame.place(x=15,y=500,width=420)
+
+        Addbtn=Button(btn_Frame,text="Add",width=10).grid(row=0,column=0,padx=10,pady=10)
+        updatebtn=Button(btn_Frame,text="Update",width=10).grid(row=0,column=1,padx=10,pady=10)
+        deletebtn=Button(btn_Frame,text="Delete",width=10).grid(row=0,column=2,padx=10,pady=10)
+        clearbtn=Button(btn_Frame,text="Clear",width=10).grid(row=0,column=3,padx=10,pady=10)
+
+        
+
+
+
+
+
+
+
+
+
         #Detail_Frame
         Detail_Frame=Frame(self.root,bd=4,relief=RIDGE,bg="crimson")
         Detail_Frame.place(x=500,y=100,width=800,height=560)
