@@ -123,28 +123,12 @@ class Student:
         Student_table.column("dob",width=100)
         Student_table.column("address",width=150)
         Student_table.pack(fill=BOTH,expand=1)
-        self.fetch_data()
     def add_students(self):
-        con=pymysql.connect(host="localhost",user="root",passwords="",database="stm")
+        con=pymysql.connect(host="localhost",user="root",password="",database="stm")
         cur=con.cursor()
-        cur.execute("inset into students value(%s,%s,%s,%s,%s,%s,%s)"(self.Roll_No_var.get(),self.name_var.get(),self.email_var.get(),self.gender_var.get(),self.contact_var.get(),self.dob_var.get(),self.txt_Address.get('1.0'),END))
+        cur.execute("inset into students value(%s,%s,%s,%s,%s,%s,%s)",(self.Roll_No_var.get(),self.name_var.get(),self.email_var.get(),self.gender_var.get(),self.contact_var.get(),self.dob_var.get(),self.txt_Address.get('1.0',END)))
         con.commit()
-        self.fetch_data()
         con.close()
-
-
-    def fetch_data(self):
-        con=pymysql.connect(host="localhost",user="root",passwords="",database="stm")
-        cur=con.cursor()
-        cur.execute("select * from students")
-        rows=cur.fetchall()
-        if len(rows)!=0:
-            self.Student_table.Delete(*self.Student_table.get_children())
-            for row in rows:
-                self.Student_table.insert('',END,values=rows)
-            com.commit()
-        com.close()
-
 root=Tk()
 ob=Student(root)
 root.mainloop()
